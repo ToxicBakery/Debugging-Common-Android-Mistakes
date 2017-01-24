@@ -6,14 +6,14 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 /**
- * Demo showing a common situation where multiple threads end up modifying the same value indirectly. The callers have
- * to know that fibonacci is not thread safe. In this example we can expect to see the wrong value and sometimes
- * ArrayIndexOutOfBoundsException. The exception is easy to catch, the wrong value is not as it may not always be wrong.
+ * Demo showing a common situation when multiple threads modify the same value indirectly. The callers have to know that
+ * the fibonacci implementation is not thread safe. In this example we can expect to typically see the wrong value on
+ * multicore CPUs. Single core CPUs should typically produce the correct result.
  * <p>
  * Excepted fib value is 55
  * <p>
- * This implementation should work as expected in a typical single core emulator setup but will fail on most real
- * devices which can lead to flaky testing and getting out into the wild without being a caught issue.
+ * The reason for the flaky test result is that internally the fibonacci implementation uses a list to cache results.
+ * While this optimization improves nth call performance it is inherently not thread safe.
  */
 public class DemoDebuggerWrongValue extends BaseDemo {
 
