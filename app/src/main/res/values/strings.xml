@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Debugging</string>
+    <string name="calculate">Calculate</string>
+
+    <string name="activity_wrong_thread">Wrong Thread</string>
+    <string name="activity_wrong_value">Wrong Value</string>
+</resources>
