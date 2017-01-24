@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Pair;
 
+import com.ToxicBakery.debugging.demo.DemoDebuggerTooManyThreads;
 import com.ToxicBakery.debugging.demo.DemoDebuggerWrongThread;
 import com.ToxicBakery.debugging.demo.DemoDebuggerWrongValue;
 
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     public MainActivity() {
         activityClasses.add(createPair(R.string.activity_wrong_value, DemoDebuggerWrongValue.class));
         activityClasses.add(createPair(R.string.activity_wrong_thread, DemoDebuggerWrongThread.class));
+        activityClasses.add(createPair(R.string.activity_too_many_threads, DemoDebuggerTooManyThreads.class));
     }
 
     @Override
