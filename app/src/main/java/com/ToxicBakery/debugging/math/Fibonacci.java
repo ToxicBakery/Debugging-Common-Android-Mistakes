@@ -14,7 +14,8 @@ public class Fibonacci {
         fibs.add(1);
     }
 
-    public int to(@IntRange(from = 0) int n) {
+    // Synchronized lock is a potential solution for WrongValue demo.
+    public /*synchronized*/ int to(@IntRange(from = 0) int n) {
         if (fibs.size() > n) {
             return fibs.get(n);
         }

@@ -1,6 +1,7 @@
 package com.ToxicBakery.debugging.demo;
 
 import com.ToxicBakery.debugging.math.Fibonacci;
+import com.ToxicBakery.debugging.util.ThreadMonitor;
 
 /**
  * Demo showing a different threading mistake. The calculator in this instance wants to count
@@ -10,6 +11,23 @@ import com.ToxicBakery.debugging.math.Fibonacci;
  * threading such as in RxJava.
  */
 public class DemoDebuggerTooManyThreads extends BaseDemo {
+
+// Thread monitor will crash the app before too many threads occur, uncomment to observe this.
+    /*private ThreadMonitor threadMonitor;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        threadMonitor = new ThreadMonitor(10);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        threadMonitor.destroy();
+    }*/
 
     @Override
     void calculate() {
